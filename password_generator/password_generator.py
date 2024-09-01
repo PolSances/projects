@@ -8,7 +8,7 @@ mastersec = ["ç", "ñ"]
 password = []
 
 def main():
-    generate_password(get_level())
+    generate_password(get_level(),get_length())
     print(password)
     
 
@@ -86,8 +86,21 @@ def get_level():
         except ValueError:
             print("Enter a Number please!")
             continue
-    return int(level), int(length)
+    return int(level)
     
 
+def get_length():
+    while True:
+        length = input("How many characters? ")
+        try:
+            if int(length) > 0:
+                break
+            else:
+                print("Enter a Number greater than 0!")
+                continue
+        except ValueError:
+            print("Enter a Number please!")
+            continue
+    return int(length)
 
 main()
