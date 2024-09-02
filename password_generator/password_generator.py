@@ -5,7 +5,7 @@ choices3 = ["more", "normal", "less"]
 choices4 = ["super", "more", "normal", "less"]
 choices5 = ["mega", "super", "more", "normal", "less"]
 
-normal = [['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']] 
+normal = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] 
 capital = [chr(i) for i in range(65, 91)]  
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 special_c = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '|', '\\', ':', ';', '"', "'", '<', '>', ',', '.', '?', '/']
@@ -20,18 +20,18 @@ def main():
 
 def generate_password(lev,lth):
     if lev == 1:
-        for i in range(lth - 1):
+        for i in range(lth):
             password.append(normal[random.randint(0, len(normal) - 1)])
     
     elif lev == 2:
-        for i in range(lth - 1):
+        for i in range(lth):
             if random.choice["more", "less"] == "more":
                 password.append(capital[random.randint(0, len(capital) - 1)])
             else: 
                 password.append(normal[random.randint(0, len(normal - 1))])
 
     elif lev == 3:
-        for i in range(lth - 1):
+        for i in range(lth):
             x = random.choice(choices3)
             if x == "more":
                 password.append(numbers[random.randint(0, len(numbers)- 1)])
@@ -41,7 +41,7 @@ def generate_password(lev,lth):
                 password.append(normal[random.randint(0, len(normal) - 1 )])
     
     elif lev == 4:
-        for i in range(lth - 1):
+        for i in range(lth):
             x = random.choice(choices4)
             if x == "super":
                 password.append(special_c[random.randint(0, len(special_c)- 1)])
@@ -52,7 +52,7 @@ def generate_password(lev,lth):
             elif x == "less":
                 password.append(normal[random.randint(0, len(normal) - 1)])
     else:
-        for i in range(lth - 1):
+        for i in range(lth):
             x = random.choice(choices5)
             if x == "mega":
                 password.append(mastersec[random.randint(0,len(mastersec) - 1)])
