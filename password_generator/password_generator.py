@@ -1,6 +1,7 @@
 import random
+import pyfiglet 
 
-
+choices2 = ["more", "less"]
 choices3 = ["more", "normal", "less"]
 choices4 = ["super", "more", "normal", "less"]
 choices5 = ["mega", "super", "more", "normal", "less"]
@@ -14,8 +15,13 @@ password = []
 
 
 def main():
+    preamble()
     generate_password(get_level(),get_length())
     print_password()
+
+def preamble():
+    result = pyfiglet.figlet_format("PASSWORD GENERATOR \n BY POL SANCES") 
+    print(result) 
 
 def generate_password(lev,lth):
     if lev == 1:
@@ -24,10 +30,10 @@ def generate_password(lev,lth):
     
     elif lev == 2:
         for i in range(lth):
-            if random.choice["more", "less"] == "more":
+            if random.choice(choices2) == "more":
                 password.append(capital[random.randint(0, len(capital) - 1)])
             else: 
-                password.append(normal[random.randint(0, len(normal - 1))])
+                password.append(normal[random.randint(0, len(normal) - 1)])
 
     elif lev == 3:
         for i in range(lth):
@@ -62,7 +68,7 @@ def generate_password(lev,lth):
             elif x == "normal":
                 password.append(capital[random.randint(0, len(capital) - 1)])
             elif x == "less":
-                password.append([normal[random.randint(0, len(normal) - 1)]])
+                password.append(normal[random.randint(0, len(normal) - 1)])
 
         
 def get_level():
@@ -99,5 +105,5 @@ def print_password():
     for i in range(len(password)):
         password_formatted = password_formatted + str(password[i])
 
-    print(password_formatted)
+    print(f"Password: {password_formatted}")
 main()
